@@ -1,0 +1,23 @@
+<html>
+<body>
+    <button id="btn1">Btn-1</button>
+    <button id="btn2">Btn-2</button>
+    <button id="btn3">Btn-3</button>
+    <button id="btn4">Btn-4</button>
+    <script>
+        // arrow function shouldn't be used if value of this has to be dynamic
+       /* function changeColor(){ // Regular function - this is dynamic (this=btn1/btn2..btn4)
+            this.style.backgroundColor='red';
+            console.log(this);
+        } */
+        let changeColor= ()=> { // Arrow function - this is static, based on where the function is written - inside script tag ; this = window
+        this.style.backgroundColor='red';
+        console.log(this);
+        }
+        document.getElementById('btn1').addEventListener('click',changeColor);
+        document.getElementById('btn2').addEventListener('click',changeColor);
+        document.getElementById('btn3').addEventListener('click',changeColor);
+        document.getElementById('btn4').addEventListener('click',changeColor);
+    </script>
+</body>
+</html>

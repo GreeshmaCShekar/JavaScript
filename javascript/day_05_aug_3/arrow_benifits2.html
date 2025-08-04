@@ -1,0 +1,28 @@
+<script>
+    class student{
+        firstname='Virat';
+        lastname='Kohli';
+        fullname1(){ //Regular function - 'this'= how/where the function is written
+            console.log(this.firstname, this.lastname, this); // this = student/window
+        }
+        fullname2 = () => { //Arrow function - 'this' = where the function is written
+        console.log(this.firstname, this.lastname, this); // this = student
+        }
+    }
+    let std1=new student();
+    // std1.fullname1();
+    // std1.fullname2();
+
+    // when arrow function is assigned and reassigned to a variable how many ever times, the 'this' value remains constant
+    let a = std1.fullname2;
+    a();
+
+    let b = a;
+    b();
+
+    let c = b;
+    c();
+
+    let x = std1.fullname1;
+    x();
+</script>

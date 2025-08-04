@@ -1,0 +1,16 @@
+<script>
+    // arrow function shouldn't be used as object methods
+    let user ={
+        firstname: 'Virat',
+        lastname: 'Kohli',
+        fullname1: function(){ // Regular function - has its own this binding and value is decided by how/where the function is called
+            console.log(this.firstname, this.lastname, this); // this = user
+        },
+        fullname2: ()=>{
+            console.log(this.firstname, this.lastname, this); // arrow function - doesn't have its own this binding, so this value is taken from lexical scope (or outer scope) so this = window
+        }
+    }
+    // So whenever the arrow function is written inside an object, this value is pointing to window when it has to be pointing to user in this case so arrow function should not be used inside an object.
+    user.fullname1();
+    user.fullname2();
+</script>
