@@ -1,0 +1,19 @@
+<script>
+    // 10. WAP to move all the special characters to the end of the string
+	// input:- 'hello@#hi&'
+   // output:- 'hellohi@#&'
+    let str = 'hello@#hi&';
+    let reg='';
+    let sp='';
+    for(let char of str){
+        if(/[a-zA-Z0-9]/.test(char)) // test() is a method of regular expressions in JavaScript. It's used to check if a string matches a pattern.
+        {
+            reg+=char;
+        }
+        else{
+            sp+=char;
+        }
+    }
+    let res=reg+sp;
+    console.log(res);
+</script>
