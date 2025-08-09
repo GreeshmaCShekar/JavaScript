@@ -1,0 +1,16 @@
+<script>
+    // 5. Create leaderboard from game scores (highest score wins)
+    // Output: [{player:"Alice",score:70},{player:"Bob",score:60}]
+    const games = [
+        { player: "Alice", score: 40 },
+        { player: "Bob", score: 60 },
+        { player: "Alice", score: 70 },
+        { player: "Bob", score: 55 }
+];
+
+let gs=games.sort((a,b)=>((b.score)-(a.score)));
+let gs1=gs.slice(0,2);
+let wins=gs1.map(g=>({player:g.player, score:g.score}));
+console.log(wins);
+
+</script>

@@ -1,0 +1,18 @@
+<script>
+    // 7. Ask user to enter a 3 letter word, print all the permutations using those 3 letters.
+    // input: 'ABC'
+    // output: ABC , ACB , BCA, BAC ...
+    let s=prompt('Please enter 3 lettered word');
+    if (s.length !== 3) {
+        console.log("Please enter exactly 3 letters.");
+    } else {
+        let perm = new Set(); //set constructor
+        for (let i = 0; i < s.length; i++) {
+            let a = s[i];
+            let r = s.slice(0, i) + s.slice(i + 1);
+            perm.add(a + r[0] + r[1]);
+            perm.add(a + r[1] + r[0]); // r contains remaining last 2 letters after index
+        }
+        perm.forEach(p=> console.log(p)); //forEach-string concatenation
+        }
+</script>

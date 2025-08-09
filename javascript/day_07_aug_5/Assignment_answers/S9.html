@@ -1,0 +1,32 @@
+<script>
+    // 9. Ask user to enter a roman string and convert that to integer value
+    // input:   IX    XII
+    // output : 9     12
+
+    function romanToInt(roman) {
+        const romanMap = {
+            'I': 1,
+            'V': 5,
+            'X': 10,
+            'L': 50,
+            'C': 100,
+            'D': 500,
+            'M': 1000
+        };
+        let total = 0;
+        for (let i = 0; i < roman.length; i++) {
+            let curr = romanMap[roman.charAt(i)];
+            let next = romanMap[roman.charAt(i + 1)];
+            if (next > curr) {
+                total += (next - curr);
+                i++; // Skip the next character
+            } else {
+                total += curr;
+            }
+        }
+        return total;
+    }
+    let romanStr = prompt("Enter a Roman numeral:").toUpperCase();
+    console.log("Integer value:", romanToInt(romanStr));
+    
+</script>

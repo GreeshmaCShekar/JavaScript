@@ -1,0 +1,14 @@
+<script>
+    // 6. Ask user to enter a sequence of parantheses and validate 
+    // input: '([{ }])'
+    // output : true
+
+    let str = prompt('Enter a sequence of parentheses:');
+    let replace = str.replace(/[()\[\]{}]/g, '');
+    if (replace.length === 0) {//if anything is left the length of replace will be greater than 0
+        console.log("true");
+    } else {
+        console.log("false");
+    }
+
+</script>

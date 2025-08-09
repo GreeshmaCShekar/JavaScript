@@ -1,0 +1,26 @@
+<script>
+    // 10. WAP to print the occurance of each elements 
+    // input = [10,20,30,40,50,10,30,50]
+	// output = {10:2, 20:1, 30:2 , 40:1, 50:2}/
+
+    let input= [10,20,30,40,50,10,30,50];
+    let output=input.reduce((prev,cur)=>{
+        prev[cur]=(prev[cur]||0)+1;
+        return prev;
+    },{});
+    console.log(output);
+
+    // let input = [10,20,30,40,50,10,30,50];
+    // let out={};
+    // let count =0;
+    // for(let i=0;i<input.length;i++){
+    //     let arr=input[i];
+    //     if(out[arr]){
+    //         out[arr]++;
+    //     }
+    //     else{
+    //         out[arr]=1;
+    //     }
+    // }
+    // console.log(out);
+</script>

@@ -1,0 +1,16 @@
+<script>
+// 2. Get the top 2 products with highest total sales (price × quantity)
+// Output: ["Phone", "Tablet"]
+
+const products = [
+  { name: "Laptop", price: 1000, quantity: 4 },
+  { name: "Phone", price: 500, quantity: 10 },
+  { name: "Tablet", price: 800, quantity: 5 }
+];
+
+let ts=products.sort((a,b)=>((b.price*b.quantity)-(a.price*a.quantity)));
+let t2=ts.slice(0,2);
+let prod=t2.map(p=>p.name);
+console.log(prod);
+
+</script>

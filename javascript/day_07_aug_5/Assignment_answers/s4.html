@@ -1,0 +1,14 @@
+<script>
+// 4. Print the Abbreviation for a string
+//    input: 'Rabindra Nath Tagore'
+//    output: 'R. N. tagore'
+
+let str='Rabindra Nath Tagore';
+let str2=str.split(' ');
+let short='';
+for(let i=0;i<str2.length-1;i++){
+    short+=str2[i].charAt(0).toUpperCase() + '. ';
+}
+short+=str2[str2.length-1].toLowerCase();
+console.log(short);
+</script>

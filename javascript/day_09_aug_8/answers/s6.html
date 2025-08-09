@@ -1,0 +1,23 @@
+<script>
+    // 6. Merge orders with customer details (join by id)
+    // Output: [
+    //     { orderId: 101, customerId: 1, name: "Alice" },
+    //     { orderId: 102, customerId: 2, name: "Bob" }
+    // ]
+
+    const customers = [
+        { id: 1, name: "Alice" },
+        { id: 2, name: "Bob" }
+    ];
+    const ordersList = [
+        { orderId: 101, customerId: 1 },
+        { orderId: 102, customerId: 2 }
+    ];
+
+    const merged = ordersList.map(order => {
+    const customer = customers.find(c => c.id === order.customerId);
+    return { ...order, name: customer ? customer.name : null };}); //Merge order and customer details with the spread operator (...).
+
+console.log(merged);
+
+</script>

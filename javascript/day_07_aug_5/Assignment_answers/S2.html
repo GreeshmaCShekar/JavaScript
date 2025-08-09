@@ -1,0 +1,34 @@
+<script>
+// 2. Print the character which is repeated max no of times
+//    input: 'hello world'
+//    output : 'L'
+let str = 'hello world';
+let str2=str.replace(/ /g,'');
+let max_occurace = '', max = 0;
+    for(let i=0;i<str2.length;i++){
+        let char = str.charAt(i);
+        let count = str.split(char).length - 1;
+        if(count > max){
+            max = count;
+            max_occurace = char;
+        }
+    }
+console.log(max_occurace);
+
+
+// let str='hello world';
+// let max = 0, max_occr = '';
+// for(let i=0;i<str.length;i++){
+//     let count = 0;
+//     for (let j = 0; j < str.length; j++) {
+//         if(str.charAt(j)==str.charAt(j+1)){
+//             count++;
+//         }
+//         if(count>max){
+//             max=count;
+//             max_occr=str.charAt(i);
+//         }
+//     }
+// }
+// console.log(max_occr.charAt());
+</script>

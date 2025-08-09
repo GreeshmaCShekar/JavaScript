@@ -1,0 +1,11 @@
+<script>
+// 5. Shift the characters by the next character
+//    input:  'abcxyz'
+//    output: 'bcdyza'
+
+let str='call';
+let str2=str.split('');
+let res=str2.map(char => char === 'z' ? 'a' : String.fromCharCode(char.charCodeAt(0)+1));
+let final=res.join('');
+console.log(final);
+</script>

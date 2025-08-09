@@ -1,0 +1,27 @@
+<script>
+    // 7. Find overlapping bookings
+    // Output: [[1,2]]  // booking 1 and 2 overlap
+
+    const bookings = [
+        { id: 1, start: "2025-08-01", end: "2025-08-05" },
+        { id: 2, start: "2025-08-04", end: "2025-08-06" },
+        { id: 3, start: "2025-08-10", end: "2025-08-12" }
+    ];
+
+const parsedBookings = bookings.map(b => ({
+  ...b,
+  startDate: new Date(b.start),
+  endDate: new Date(b.end),
+}));
+
+const overlapping = parsedBookings.filter((b1, i, arr) =>
+  arr.some((b2, j) =>
+    i !== j &&
+    b1.startDate <= b2.endDate &&
+    b2.startDate <= b1.endDate
+  )
+);
+
+console.log(overlapping);
+
+</script>

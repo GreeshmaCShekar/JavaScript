@@ -1,0 +1,20 @@
+<script>
+// 1. Print the occurence of each character in a string
+//    input: 'entertainment'
+//    output: { e:3 , n:2 , t: 3 ....}
+
+    let str='entertainment';
+    let counted='';
+    for(let i=0;i<str.length;i++){
+        let currentchar=str.charAt(i);
+        if(counted.includes(currentchar)) continue;
+        let count=0;
+        for(let j=0;j<str.length;j++){
+            if(str.charAt(j)===currentchar){
+                count++;
+            }
+        }
+    console.log(`${currentchar}: ${count}`);
+    counted+=currentchar;
+    }
+</script>
